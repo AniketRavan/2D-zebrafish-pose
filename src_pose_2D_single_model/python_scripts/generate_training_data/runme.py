@@ -5,7 +5,7 @@ import numpy as np
 #from avi_r import AVIReader
 #from preprocessing import bgsub
 #from preprocessing import readVideo
-from construct_model import f_x_to_model
+from construct_model import f_x_to_model, add_noise
 import matplotlib.pyplot as plt
 #import time
 import numpy.random as random
@@ -34,19 +34,6 @@ if not os.path.exists(data_folder):
     os.mkdir(data_folder + '/coor_2d');
 else:
     print('Warning: data_folder already exists. Files might be overwritten')
-
-
-def add_noise(noise_typ,image,mean,var):
-   if noise_typ == "gauss":
-      row,col= image.shape
-      sigma = var**0.5
-      gauss = np.random.normal(mean,sigma,(row,col,1)) * 255
-      gauss[gauss < 0] = 0
-      gauss = gauss.reshape(row,col)
-      noisy = image + gauss
-      noisy[noisy > 255] = 255
-      return noisy
-
 
 x = np.zeros((11, ))
 for i in range(0, n_samples):

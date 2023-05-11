@@ -40,6 +40,28 @@ def custom_round(num):
     return np.floor(num) + np.round(num - np.floor(num) + 1) - 1
 
 
+# Add Gaussian noise to image
+def add_noise(noise_typ,image,mean,var):
+   if noise_typ == "gauss":
+      row,col= image.shape
+      sigma = var**0.5
+      gauss = np.random.normal(mean,sigma,(row,col,1)) * 255
+      gauss[gauss < 0] = 0
+      gauss = gauss.reshape(row,col)
+      noisy = image + gauss
+      noisy[noisy > 255] = 255
+      return noisy
+
+
+# Add mask to an image
+def generate_mask(img):
+    _, bw = cv2.threshold(np.uint8(img), 0, 255, cv2.THRESH_BINARY)
+    # Choose dilation kernel whose size is randomly sampled from [3, 5, 7]
+    kernel_size = random.randint(1,4) * 2 + 1
+    kernel = np.ones((kernel_size, kernel_size), dtype = np.uint8)
+    bw_dilated = cv2.dilate(bw, kernel, iterations = 1)
+    return bw_dilated
+
 
 ###########################################################################################
 # Functions that directly render larva

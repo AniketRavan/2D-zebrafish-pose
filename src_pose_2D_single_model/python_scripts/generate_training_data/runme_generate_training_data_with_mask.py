@@ -3,7 +3,7 @@ import numpy as np
 #from avi_r import AVIReader
 #from preprocessing import bgsub
 #from preprocessing import readVideo
-from construct_model import f_x_to_model
+from construct_model import f_x_to_model, add_noise, generate_mask
 import matplotlib.pyplot as plt
 #import time
 import numpy.random as random
@@ -17,24 +17,13 @@ random.seed(10)
 
 theta_array = sio.loadmat('generated_pose_all_2D_50k.mat');
 theta_array = theta_array['generated_pose']
-data_folder = '../../../training_data_2D_230511_mask';
+data_folder = '../../../training_data_2D_230511';
 if not os.path.exists(data_folder):
     os.mkdir(data_folder)
     os.mkdir(data_folder + '/images');
     os.mkdir(data_folder + '/masks');
     os.mkdir(data_folder + '/coor_2d');
 
-
-def add_noise(noise_typ,image,mean,var):
-   if noise_typ == "gauss":
-      row,col= image.shape
-      sigma = var**0.5
-      gauss = np.random.normal(mean,sigma,(row,col,1)) * 255
-      gauss[gauss < 0] = 0
-      gauss = gauss.reshape(row,col)
-      noisy = image + gauss
-      noisy[noisy > 255] = 255
-      return noisy
 
 def generate_mask(img):
     _, bw = cv2.threshold(np.uint8(img), 0, 255, cv2.THRESH_BINARY)
@@ -59,7 +48,7 @@ for i in range(0, 500000):
     graymodel = np.uint8(255 * (graymodel / np.max(graymodel)))
     mask = generate_mask(graymodel)
     graymodel = add_noise('gauss', graymodel, 0.001 * 100 * random.rand(1), 0.002 * 5 * random.rand(1))
-    graymodel[mask == 0] = 0
+    #graymodel[mask == 0] = 0
     pt = torch.tensor(pt, dtype=torch.float32)
     cv2.imwrite(data_folder + '/images/im_' + str(i).rjust(6, "0") + '.png', np.uint8(graymodel))
     cv2.imwrite(data_folder + '/masks/bw_' + str(i).rjust(6, "0") + '.png', np.uint8(mask))
