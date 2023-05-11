@@ -1,0 +1,326 @@
+Running
+Module loaded
+1GPUs are available!
+500000
+Epoch 1 of 100
+Saving new model. New best_loss =  97.916158046875
+Train Loss: 274.7929
+Val Loss: 97.9162
+Epoch 2 of 100
+Saving new model. New best_loss =  70.1675626953125
+Train Loss: 52.4086
+Val Loss: 70.1676
+Epoch 3 of 100
+Saving new model. New best_loss =  42.1849763671875
+Train Loss: 41.7300
+Val Loss: 42.1850
+Epoch 4 of 100
+Saving new model. New best_loss =  34.64196251953125
+Train Loss: 37.1874
+Val Loss: 34.6420
+Epoch 5 of 100
+Saving new model. New best_loss =  24.95002822265625
+Train Loss: 32.8820
+Val Loss: 24.9500
+Epoch 6 of 100
+Train Loss: 30.3493
+Val Loss: 26.5255
+Epoch 7 of 100
+Saving new model. New best_loss =  23.282464189453126
+Train Loss: 28.3893
+Val Loss: 23.2825
+Epoch 8 of 100
+Train Loss: 26.3242
+Val Loss: 23.3267
+Epoch 9 of 100
+Train Loss: 25.6062
+Val Loss: 49.3291
+Epoch 10 of 100
+Saving new model. New best_loss =  17.30219400390625
+Train Loss: 24.5030
+Val Loss: 17.3022
+Epoch 11 of 100
+Train Loss: 23.5489
+Val Loss: 21.2511
+Epoch 12 of 100
+Saving new model. New best_loss =  13.452604384765625
+Train Loss: 22.7183
+Val Loss: 13.4526
+Epoch 13 of 100
+Train Loss: 22.3497
+Val Loss: 15.7846
+Epoch 14 of 100
+Train Loss: 21.8503
+Val Loss: 13.6367
+Epoch 15 of 100
+Train Loss: 21.4467
+Val Loss: 15.1992
+Epoch 16 of 100
+Train Loss: 21.0301
+Val Loss: 13.5768
+Epoch 17 of 100
+Train Loss: 20.3657
+Val Loss: 13.7197
+Epoch 18 of 100
+Train Loss: 20.1881
+Val Loss: 14.3473
+Epoch 19 of 100
+Saving new model. New best_loss =  11.41792193359375
+Train Loss: 19.2840
+Val Loss: 11.4179
+Epoch 20 of 100
+Train Loss: 19.4374
+Val Loss: 13.4721
+Epoch 21 of 100
+Train Loss: 19.0885
+Val Loss: 13.1083
+Epoch 22 of 100
+Train Loss: 18.5577
+Val Loss: 16.5734
+Epoch 23 of 100
+Train Loss: 18.7627
+Val Loss: 11.8885
+Epoch 24 of 100
+Train Loss: 18.2176
+Val Loss: 20.9211
+Epoch 25 of 100
+Saving new model. New best_loss =  11.326203857421875
+Train Loss: 18.1435
+Val Loss: 11.3262
+Epoch 26 of 100
+Saving new model. New best_loss =  9.320077548828126
+Train Loss: 17.8836
+Val Loss: 9.3201
+Epoch 27 of 100
+Train Loss: 17.8570
+Val Loss: 10.4507
+Epoch 28 of 100
+Train Loss: 17.0483
+Val Loss: 10.8508
+Epoch 29 of 100
+Train Loss: 17.4283
+Val Loss: 10.0948
+Epoch 30 of 100
+Train Loss: 16.8777
+Val Loss: 11.3891
+Epoch 31 of 100
+Train Loss: 17.1508
+Val Loss: 12.6186
+Epoch 32 of 100
+Saving new model. New best_loss =  9.241085888671876
+Train Loss: 16.5639
+Val Loss: 9.2411
+Epoch 33 of 100
+Saving new model. New best_loss =  8.02282640625
+Train Loss: 16.3721
+Val Loss: 8.0228
+Epoch 34 of 100
+Train Loss: 16.4469
+Val Loss: 10.7319
+Epoch 35 of 100
+Saving new model. New best_loss =  7.8585798828125
+Train Loss: 16.4581
+Val Loss: 7.8586
+Epoch 36 of 100
+Train Loss: 16.1718
+Val Loss: 9.2167
+Epoch 37 of 100
+Train Loss: 16.2299
+Val Loss: 8.3726
+Epoch 38 of 100
+Train Loss: 15.9299
+Val Loss: 9.7681
+Epoch 39 of 100
+Saving new model. New best_loss =  7.451927734375
+Train Loss: 15.8527
+Val Loss: 7.4519
+Epoch 40 of 100
+Train Loss: 16.0176
+Val Loss: 8.0277
+Epoch 41 of 100
+Train Loss: 15.6265
+Val Loss: 9.8434
+Epoch 42 of 100
+Saving new model. New best_loss =  7.1562381640625
+Train Loss: 15.6329
+Val Loss: 7.1562
+Epoch 43 of 100
+Train Loss: 15.5757
+Val Loss: 8.3470
+Epoch 44 of 100
+Train Loss: 15.2213
+Val Loss: 29.7358
+Epoch 45 of 100
+Train Loss: 15.0106
+Val Loss: 8.2161
+Epoch 46 of 100
+Train Loss: 15.2293
+Val Loss: 9.0614
+Epoch 47 of 100
+Train Loss: 15.2064
+Val Loss: 7.9529
+Epoch 48 of 100
+Train Loss: 14.7157
+Val Loss: 7.6764
+Epoch 49 of 100
+Train Loss: 14.7759
+Val Loss: 8.3842
+Epoch 50 of 100
+Train Loss: 14.9976
+Val Loss: 7.9697
+Epoch 51 of 100
+Train Loss: 15.1036
+Val Loss: 9.3068
+Epoch 52 of 100
+Train Loss: 14.7819
+Val Loss: 11.2440
+Epoch 53 of 100
+Train Loss: 14.5107
+Val Loss: 7.3252
+Epoch 54 of 100
+Train Loss: 14.7017
+Val Loss: 7.6372
+Epoch 55 of 100
+Saving new model. New best_loss =  6.500030913085937
+Train Loss: 14.5900
+Val Loss: 6.5000
+Epoch 56 of 100
+Train Loss: 14.7774
+Val Loss: 7.0773
+Epoch 57 of 100
+Saving new model. New best_loss =  6.2798274853515625
+Train Loss: 14.9238
+Val Loss: 6.2798
+Epoch 58 of 100
+Train Loss: 14.3854
+Val Loss: 8.9178
+Epoch 59 of 100
+Train Loss: 14.2871
+Val Loss: 7.0575
+Epoch 60 of 100
+Train Loss: 14.3119
+Val Loss: 7.7641
+Epoch 61 of 100
+Train Loss: 14.4897
+Val Loss: 6.4990
+Epoch 62 of 100
+Train Loss: 14.3463
+Val Loss: 6.2999
+Epoch 63 of 100
+Train Loss: 14.4029
+Val Loss: 6.4520
+Epoch 64 of 100
+Saving new model. New best_loss =  5.850854086914063
+Train Loss: 13.9888
+Val Loss: 5.8509
+Epoch 65 of 100
+Train Loss: 14.0020
+Val Loss: 7.1711
+Epoch 66 of 100
+Train Loss: 13.8501
+Val Loss: 6.7612
+Epoch 67 of 100
+Train Loss: 14.0575
+Val Loss: 6.5202
+Epoch 68 of 100
+Train Loss: 13.7732
+Val Loss: 6.0213
+Epoch 69 of 100
+Train Loss: 14.1625
+Val Loss: 6.4861
+Epoch 70 of 100
+Train Loss: 13.6158
+Val Loss: 5.9306
+Epoch 71 of 100
+Train Loss: 14.1767
+Val Loss: 8.2537
+Epoch 72 of 100
+Train Loss: 13.9186
+Val Loss: 6.1433
+Epoch 73 of 100
+Train Loss: 13.6428
+Val Loss: 6.5227
+Epoch 74 of 100
+Train Loss: 13.7900
+Val Loss: 6.8556
+Epoch 75 of 100
+Saving new model. New best_loss =  5.548430844726562
+Train Loss: 13.3371
+Val Loss: 5.5484
+Epoch 76 of 100
+Train Loss: 13.7051
+Val Loss: 7.2365
+Epoch 77 of 100
+Train Loss: 13.8025
+Val Loss: 8.7644
+Epoch 78 of 100
+Train Loss: 13.8444
+Val Loss: 7.7554
+Epoch 79 of 100
+Train Loss: 13.6942
+Val Loss: 5.6525
+Epoch 80 of 100
+Train Loss: 13.7225
+Val Loss: 6.2988
+Epoch 81 of 100
+Train Loss: 13.3605
+Val Loss: 6.1858
+Epoch 82 of 100
+Train Loss: 13.5622
+Val Loss: 6.0627
+Epoch 83 of 100
+Train Loss: 13.3129
+Val Loss: 7.5899
+Epoch 84 of 100
+Train Loss: 13.1970
+Val Loss: 6.6493
+Epoch 85 of 100
+Train Loss: 13.4516
+Val Loss: 5.8662
+Epoch 86 of 100
+Train Loss: 13.5374
+Val Loss: 6.3806
+Epoch 87 of 100
+Train Loss: 13.6781
+Val Loss: 6.1578
+Epoch 88 of 100
+Train Loss: 13.6378
+Val Loss: 6.0013
+Epoch 89 of 100
+Train Loss: 13.4910
+Val Loss: 5.8074
+Epoch 90 of 100
+Train Loss: 13.1975
+Val Loss: 8.4465
+Epoch 91 of 100
+Train Loss: 12.9139
+Val Loss: 6.6150
+Epoch 92 of 100
+Saving new model. New best_loss =  4.9928126635742185
+Train Loss: 13.1711
+Val Loss: 4.9928
+Epoch 93 of 100
+Train Loss: 12.9639
+Val Loss: 7.3497
+Epoch 94 of 100
+Train Loss: 13.1503
+Val Loss: 6.5896
+Epoch 95 of 100
+Train Loss: 13.3471
+Val Loss: 7.9162
+Epoch 96 of 100
+Train Loss: 13.1956
+Val Loss: 5.6353
+Epoch 97 of 100
+Train Loss: 12.9514
+Val Loss: 5.9380
+Epoch 98 of 100
+Train Loss: 13.5852
+Val Loss: 6.5190
+Epoch 99 of 100
+Train Loss: 12.9238
+Val Loss: 6.4774
+Epoch 100 of 100
+Train Loss: 12.9907
+Val Loss: 5.1324
+Done

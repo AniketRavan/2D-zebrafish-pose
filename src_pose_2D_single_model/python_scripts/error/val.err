@@ -1,0 +1,39 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda deactivate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Traceback (most recent call last):
+  File "/home/asravan2/pose_estimation/2D-fish-pose/python_scripts/runme_validate_and_evaluate.py", line 52, in <module>
+    model.load_state_dict(torch.load('resnet_pose_230506_best_python_two_blocks.pta'))
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 594, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'resnet_pose_230506_best_python_two_blocks.pta'
+Traceback (most recent call last):
+  File "/home/asravan2/pose_estimation/2D-fish-pose/python_scripts/runme_validate_and_evaluate.py", line 52, in <module>
+    model.load_state_dict(torch.load('resnet_pose_230506_best_python_two_blocks.pta'))
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 594, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/opt/miniconda3/envs/opence-v1.5.1/lib/python3.9/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'resnet_pose_230506_best_python_two_blocks.pta'

@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=val
+#SBATCH --output="log/val.out"
+#SBATCH --error="error/val.err"
+#SBATCH --partition=gpux1
+#SBATCH --nodes=1
+#SBATCH --time=24
+#SBATCH --cpu_per_gpu=40
+#SBATCH --mem-per-cpu=2048
+#SBATCH --begin=now+0minutes
+
+echo Running
+module load opence/1.5.1
+echo Module loaded
+python runme_validate_and_evaluate.py -e 1 -d "230426"  -o "validation_outputs/fs_2D_230426_subset_two_230506"
+python runme_validate_and_evaluate.py -e 1 -d "230427" -o "validation_outputs/fs_2D_230427_subset_two_230506"
+echo Done
