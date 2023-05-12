@@ -21,6 +21,7 @@ torch.manual_seed(0)
 parser = argparse.ArgumentParser()
 parser.add_argument('-e','--epochs',default=10, type=int, help='number of epochs to train the VAE for')
 parser.add_argument('-o','--output_dir', default="outputs/220704_old_model", type=str, help='path to store output images and plots')
+parser.add_argument('-t','--training_data_dir', default="../../../training_data_2D_230511", type=str, help='path to store output images and plots')
 
 args = vars(parser.parse_args())
 imageSizeX = 101
@@ -28,9 +29,10 @@ imageSizeY = 101
 
 epochs = args['epochs']
 output_dir = args['output_dir']
+training_data_dir = arg['training_data_dir']
 
 lr = 0.001
-date = '230506'
+
 
 if (not os.path.isdir(output_dir)):
     os.mkdir(output_dir)
@@ -64,11 +66,11 @@ class padding:
         return padded_image
 
 transform = transforms.Compose([padding(), transforms.ToTensor(),  transforms.ConvertImageDtype(torch.float)])
-pose_folder = '../training_data_2D_' + date + '/annotations_' + date + '_pose_tensor/'
+pose_folder = training_data_dir + '/coor_2d/'
 pose_files = sorted(os.listdir(pose_folder))
 pose_files_add = [pose_folder + file_name for file_name in pose_files]
 
-im_folder = '../training_data_2D_'+  date + '/images/'
+im_folder = training_data_dir +  date + '/images/'
 im_files = sorted(os.listdir(im_folder))
 im_files_add = [im_folder + file_name for file_name in im_files]
 
