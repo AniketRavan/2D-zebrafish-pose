@@ -41,8 +41,6 @@ else:
 # Initiate parameter vector x
 x = np.zeros((11, ))
 for i in tqdm(range(0, n_samples)):
-    if i % (int(n_samples / 5)) == 0:
-        print('Finished ' + str(i) + ' of ' + str(n_samples), flush=True)
     # Initiate random co-ordinates of the larva in the field of view
     x[0] = 20 * (random.rand(1) - 0.5) + 100
     x[1] = 20 * (random.rand(1) - 0.5) + 100

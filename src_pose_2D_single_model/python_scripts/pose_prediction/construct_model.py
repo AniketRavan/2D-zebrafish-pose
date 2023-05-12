@@ -1,3 +1,5 @@
+# This script contains all the functions required to render a synthetic larva, given the parameter vector of the physical model and the fish length
+
 # Import libraries
 import numpy as np
 from numpy.random import normal as normrnd
@@ -7,8 +9,9 @@ import cv2
 import time
 import pdb
 
-############################################################################################
-# Auxilliary functions 
+######################
+# Auxilliary functions
+######################
 
 # Rotate along x axis. Angles are accepted in radians
 def rotx(angle):
@@ -63,8 +66,9 @@ def generate_mask(img):
     return bw_dilated
 
 
-###########################################################################################
+#######################################
 # Functions that directly render larva
+#######################################
 
 # Create an ellipsoid with given co-ordinates of the center and the dimensions of the axes
 # This ellipsoid is used to construct eyes, head and belly of the larva
