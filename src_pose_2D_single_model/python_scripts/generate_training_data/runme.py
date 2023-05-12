@@ -15,6 +15,7 @@ import pdb
 import cv2
 import torch
 import argparse
+from tqdm import tqdm
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d','--data_folder', default="training_dataset", type=str, help='path to store training dataset')
@@ -39,8 +40,8 @@ else:
 
 # Initiate parameter vector x
 x = np.zeros((11, ))
-for i in range(0, n_samples):
-    if i % (int(n_samples / 4000)) == 0:
+for i in tqdm(range(0, n_samples)):
+    if i % (int(n_samples / 5)) == 0:
         print('Finished ' + str(i) + ' of ' + str(n_samples), flush=True)
     # Initiate random co-ordinates of the larva in the field of view
     x[0] = 20 * (random.rand(1) - 0.5) + 100

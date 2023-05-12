@@ -29,7 +29,7 @@ $ conda activate danio_env
 ### Generate training dataset
 
 Navigate to the appropriate directory \
-$ cd generate_training_data 
+$ cd 2D-zebrafish-pose/src_pose_2D_single_model/generate_training_data 
 
 Run the python script to generate the training dataset \
 $ python runme.py -d <data_folder> -n <n_samples> 
@@ -39,7 +39,7 @@ This generates a training dataset of <n_samples> rendered larval images and the 
 ### Train a convolutional neural network
 
 Navigate to the appropriate directory \
-$ cd train_network_model 
+$ cd 2D-zebrafish-pose/src_pose_2D_single_model/train_network_model 
 
 Run the python script to train a network model to perform pose estimation \
 $ python runme_four.py -e <n_epochs> -o <output_dir> -t <training_dataset_directory>
