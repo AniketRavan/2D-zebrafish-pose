@@ -13,7 +13,7 @@ from torchvision import datasets
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image
 from CustomDataset_images_only import CustomImageDataset
-from ResNet_Blocks_3D_two_blocks import resnet18
+from ResNet_Blocks_3D_four_blocks import resnet18
 import time
 from multiprocessing import Pool
 import os
