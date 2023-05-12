@@ -28,7 +28,8 @@ from construct_model import f_x_to_model_evaluation
 parser = argparse.ArgumentParser()
 parser.add_argument('-e','--epochs',default=1, type=int, help='number of epochs to train the VAE for')
 parser.add_argument('-o','--output_dir', default="validations", type=str, help='path to store output images and plots')
-parser.add_argument('-d','--date',default="230426", type=str, help='date')
+parser.add_argument('-m','--model',default="resnet_pose_230506_best_python_four_blocks.pt", type=str, help='path to model file')
+parser.add_argument('-i','--image_folder', default='../../validation_data_for_github',type=str,help='path to real images for network validation')
 args = vars(parser.parse_args())
 
 imageSizeX = 101
@@ -36,7 +37,8 @@ imageSizeY = 101
 
 epochs = args['epochs']
 output_dir = args['output_dir']
-date = args['date']
+im_folder = args['image_folder']
+model_path = args['model']
 lr = 0.001
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -49,7 +51,7 @@ batch_size = 512
 
 if (not os.path.isdir(output_dir)):
     os.mkdir(output_dir)
-model.load_state_dict(torch.load('resnet_pose_230506_best_python_two_blocks.pt'))
+model.load_state_dict(torch.load(model_path))
 
 class AddGaussianNoise(object):
     def __init__(self, mean=0.005, std=0.0015):
@@ -78,7 +80,7 @@ class padding:
 
 transform = transforms.Compose([padding(), transforms.ToTensor(), transforms.ConvertImageDtype(torch.float)])
 #im_folder = '../validation_data_fs_2D_' + date + '_subset/images_real/'
-im_folder = '../external_dataset_no_noise/images/'
+
 im_files = sorted(os.listdir(im_folder))
 im_files_add = [im_folder + file_name for file_name in im_files]
 
