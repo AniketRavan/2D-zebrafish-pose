@@ -3,6 +3,11 @@
 Here, we use our 3-D physical model to render a synthetic dataset of 2-D projections as seen by the bottom/top camera. A convolutional neural network trained on this synthetic dataset is used to perform pose estimation 2-D video datasets. For 3-D pose estimation, please refer to the following repository:
 https://github.com/AniketRavan/3D-fish-pose
 
+## Read the preprint
+https://www.biorxiv.org/content/10.1101/2023.01.06.522821v1.full
+
+## Try out the google colab notebook
+https://colab.research.google.com/drive/1D20daqPmzXO8bjnBfi6sYFHuGz9nwDom?authuser=1
 
 ## Installation
 
@@ -50,8 +55,4 @@ Run the python script to perform pose predictions and evaluations \
 
 $ python runme_validate_and_evaluate.py
 
-## Read the preprint
-https://www.biorxiv.org/content/10.1101/2023.01.06.522821v1.full
 
-## Try out the google colab notebook
-https://colab.research.google.com/drive/1D20daqPmzXO8bjnBfi6sYFHuGz9nwDom?authuser=1
