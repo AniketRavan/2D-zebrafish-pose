@@ -29,7 +29,7 @@ imageSizeY = 101
 
 epochs = args['epochs']
 output_dir = args['output_dir']
-training_data_dir = arg['training_data_dir']
+training_data_dir = args['training_data_dir']
 
 lr = 0.001
 
@@ -70,7 +70,7 @@ pose_folder = training_data_dir + '/coor_2d/'
 pose_files = sorted(os.listdir(pose_folder))
 pose_files_add = [pose_folder + file_name for file_name in pose_files]
 
-im_folder = training_data_dir +  date + '/images/'
+im_folder = training_data_dir + '/images/'
 im_files = sorted(os.listdir(im_folder))
 im_files_add = [im_folder + file_name for file_name in im_files]
 
@@ -169,7 +169,7 @@ for epoch in range(epochs):
     train_loss.append(train_epoch_loss)
     val_loss.append(val_epoch_loss)
     if (val_epoch_loss < best_loss):
-        torch.save(model.state_dict(), 'resnet_pose_' + date + '_best_python_four_blocks.pt')
+        torch.save(model.state_dict(), 'resnet_pose_best_python_four_blocks.pt')
         best_loss = val_epoch_loss
         print('Saving new model. New best_loss = ', str(best_loss))
     train_pose_loss_array.append(train_pose_loss)
@@ -177,7 +177,6 @@ for epoch in range(epochs):
     print(f"Train Loss: {train_epoch_loss:.4f}",flush=True)
     print(f"Val Loss: {val_epoch_loss:.4f}",flush=True)
 
-#torch.save(model.state_dict(), 'resnet_pose_' + date + '_2.pt')
 
 plt.plot(train_loss[20:], color='green')
 plt.plot(val_loss[20:], color='red')
