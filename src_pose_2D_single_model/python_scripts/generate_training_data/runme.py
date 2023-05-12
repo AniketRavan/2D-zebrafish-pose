@@ -37,8 +37,8 @@ else:
 
 x = np.zeros((11, ))
 for i in range(0, n_samples):
-    if i % 1000 == 0:
-        print('Finished ' + str(i) + ' of 500000', flush=True)
+    if i % (n_samples / 1000) == 0:
+        print('Finished ' + str(i) + ' of ' + str(n_samples), flush=True)
     x[0] = 20 * (random.rand(1) - 0.5) + 100
     x[1] = 20 * (random.rand(1) - 0.5) + 100
     x[2] = random.rand(1) * 2 * np.pi
