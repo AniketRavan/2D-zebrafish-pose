@@ -12,18 +12,28 @@ import scipy.io as sio
 import pdb
 import cv2
 import torch
+import argparse
 
 random.seed(10)
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-d','--data_folder', default="../../../training_dataset", type=str, help='path to store training dataset')
+parser.add_argument('-n','--n_samples',default=500000, type=int, help='number of training examples')
+args = vars(parser.parse_args())
+
+data_folder = args['data_folder']
+n_samples = args['n_samples']
+
 theta_array = sio.loadmat('generated_pose_all_2D_50k.mat');
 theta_array = theta_array['generated_pose']
-data_folder = '../../../training_data_2D_230511';
+
 if not os.path.exists(data_folder):
     os.mkdir(data_folder)
     os.mkdir(data_folder + '/images');
     os.mkdir(data_folder + '/masks');
     os.mkdir(data_folder + '/coor_2d');
-
+else:
+    print('Target folder already exists. This may cause files might be overwritten. Consider renaming target folder')
 
 def generate_mask(img):
     _, bw = cv2.threshold(np.uint8(img), 0, 255, cv2.THRESH_BINARY)
@@ -34,7 +44,7 @@ def generate_mask(img):
     return bw_dilated 
 
 x = np.zeros((11, ))
-for i in range(0, 500000):
+for i in range(0, n_samples):
     if i % 1000 == 0:
         print('Finished ' + str(i) + ' of 10000', flush=True)
     x[0] = 20 * (random.rand(1) - 0.5) + 100

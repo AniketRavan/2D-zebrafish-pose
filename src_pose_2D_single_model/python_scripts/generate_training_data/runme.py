@@ -14,7 +14,7 @@ import scipy.io as sio
 import pdb
 import cv2
 import torch
-import argsparse
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d','--data_folder', default="training_dataset", type=str, help='path to store training dataset')
@@ -26,7 +26,7 @@ n_samples = args['n_samples']
 
 random.seed(10)
 
-theta_array = sio.loadmat('generated_pose_all_2D_50k.mat');
+theta_array = sio.loadmat('generated_pose_all_2D_50k.mat')
 theta_array = theta_array['generated_pose']
 if not os.path.exists(data_folder):
     os.mkdir(data_folder)
