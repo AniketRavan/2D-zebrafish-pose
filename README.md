@@ -55,7 +55,3 @@ Run the python script to perform pose predictions and evaluations \
 $ python runme_validate_and_evaluate.py - i <input_image_dataset> -o <validation_outputs> -m <path_to_trained_model>
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e454e775c3e2343f490b87fe1a5de72704026be1

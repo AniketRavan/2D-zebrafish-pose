@@ -1,3 +1,5 @@
+# This script trains a network model to predict larval poses, given synthetic images
+
 import torch
 import torchvision
 import torch.optim as optim
@@ -44,7 +46,12 @@ model = resnet18(1, 12, activation='leaky_relu').to(device)
 n_cuda = torch.cuda.device_count()
 if (torch.cuda.is_available()):
     print(str(n_cuda) + 'GPUs are available!')
-else: print('Cuda is not available')
+    nworkers = n_cuda*12
+    pftch_factor = 2
+else: 
+    print('Cuda is not available. Training without GPUs. This might take long')
+    nworkers = 4
+    pftch_factor = 2
 batch_size = 512*n_cuda
 
 if torch.cuda.device_count() > 1:
@@ -80,8 +87,8 @@ val_size = len(data) - train_size
 train_data, val_data = torch.utils.data.random_split(data, [train_size, val_size])
 print(len(data))
 
-train_loader = DataLoader(train_data, batch_size=batch_size,shuffle=True,num_workers=n_cuda*12,prefetch_factor=2,persistent_workers=True)
-val_loader = DataLoader(val_data, batch_size=batch_size,shuffle=False,num_workers=n_cuda*16,prefetch_factor=4,persistent_workers=True)
+train_loader = DataLoader(train_data, batch_size=batch_size,shuffle=True,num_workers=nworkers,prefetch_factor=pftch_factor,persistent_workers=True)
+val_loader = DataLoader(val_data, batch_size=batch_size,shuffle=False,num_workers=nworkers,prefetch_factor=pftch_factor,persistent_workers=True)
 
 optimizer = optim.Adam(model.parameters(), lr=lr)
 criterion = nn.MSELoss(reduction='sum')

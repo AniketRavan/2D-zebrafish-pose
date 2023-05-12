@@ -1,3 +1,6 @@
+# This script generates pose predictions using a trained network model and evaluates the prediction using a correlation coefficient score
+# The correlation coefficient scores are saved in a user-defined directory
+
 import sys
 sys.path.append("../src_pose_2D_single_model/")
 import torch
@@ -46,12 +49,18 @@ model = resnet18(1, 12, activation='leaky_relu').to(device)
 n_cuda = torch.cuda.device_count()
 if (torch.cuda.is_available()):
     print(str(n_cuda) + 'GPUs are available!')
-else: print('Cuda is not available')
+    model.load_state_dict(torch.load(model_path))
+    nworkers = n_cuda*16
+    pftch_factor = 2
+else:
+    print('Cuda is not available')
+    nworkers = 1
+    pftch_factor = None
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 batch_size = 512
 
 if (not os.path.isdir(output_dir)):
     os.mkdir(output_dir)
-model.load_state_dict(torch.load(model_path))
 
 class AddGaussianNoise(object):
     def __init__(self, mean=0.005, std=0.0015):
@@ -85,7 +94,7 @@ im_files = sorted(os.listdir(im_folder))
 im_files_add = [im_folder + file_name for file_name in im_files]
 
 val_data = CustomImageDataset(im_files_add, transform=transform)
-val_loader = DataLoader(val_data, batch_size=batch_size,shuffle=False,num_workers=n_cuda*16,prefetch_factor=2,persistent_workers=True)
+val_loader = DataLoader(val_data, batch_size=batch_size,shuffle=False,num_workers=nworkers,prefetch_factor=pftch_factor,persistent_workers=True)
 
 optimizer = optim.Adam(model.parameters(), lr=lr)
 criterion = nn.MSELoss(reduction='none')
