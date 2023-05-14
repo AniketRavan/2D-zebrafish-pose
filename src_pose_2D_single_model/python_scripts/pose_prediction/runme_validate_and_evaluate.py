@@ -40,7 +40,7 @@ imageSizeY = 101
 
 epochs = args['epochs']
 output_dir = args['output_dir']
-im_folder = args['image_folder']
+im_folder = args['image_folder'] + '/images_real/'
 model_path = args['model']
 lr = 0.001
 
