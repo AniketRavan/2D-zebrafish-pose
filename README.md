@@ -40,7 +40,9 @@ $ cd 2D-zebrafish-pose/src_pose_2D_single_model/generate_training_data
 ```
 
 Run the python script to generate the training dataset \
+```
 $ python runme.py -d <data_folder> -n <n_samples> 
+```
 
 This generates a training dataset of <n_samples> rendered larval images and the corresponding pose in a folder named <data_folder>
 
